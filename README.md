@@ -10,55 +10,15 @@ A Python library written in Rust (PyO3) with two main features:
 - `get_hackers_manifesto()`
 - `open_manifesto_in_browser()`
 
-## Quick Build (Windows)
-
-Build in release mode:
-
-```powershell
-cargo build --release
-```
-
-Create a local Python module from the DLL:
-
-```powershell
-Copy-Item .\target\release\hackers_manifesto.dll .\hackers_manifesto.pyd -Force
-```
-
 ## Usage in Python
 
 ```python
-import hackers_manifesto
+import hackers_manifesto as hm
 
-print(hackers_manifesto.get_hackers_manifesto())
-hackers_manifesto.open_manifesto_in_browser()
+print(hm.get_hackers_manifesto())
+hm.open_manifesto_in_browser()
 ```
 
-## Build a Wheel with Maturin
+## Note
 
-Install maturin in the active Python environment:
-
-```powershell
-python -m pip install maturin
-```
-
-Build the wheel:
-
-```powershell
-python -m maturin build --release
-```
-
-The generated wheel is placed in `target/wheels/`.
-
-Install the wheel in the current environment:
-
-```powershell
-python -m pip install --force-reinstall .\target\wheels\hackers_manifesto-0.1.0-cp38-abi3-win_amd64.whl
-```
-
-## Smoke Test
-
-Run a quick validation of the installed package:
-
-```powershell
-python .\scripts\smoke_test.py
-```
+On PyPI/pip, package names are normalised, so `hackers_manifesto` may appear as `hackers-manifesto`. This is expected; the Python import remains `import hackers_manifesto`.
