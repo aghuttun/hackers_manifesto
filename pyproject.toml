@@ -1,0 +1,26 @@
+[build-system]
+requires = ["maturin>=1.12,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "hackers_manifesto"
+description = "The Hacker's Manifesto Python package"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+authors = [
+    { name = "portepau" },
+]
+keywords = ["rust", "python", "pyo3", "maturin", "hackers_manifesto"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/portepau/hackers_manifesto"
+Repository = "https://github.com/portepau/hackers_manifesto"
