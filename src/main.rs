@@ -1,4 +1,3 @@
-use pyo3::exceptions::PyRuntimeError;
 use pyo3::prelude::*;
 
 const HACKERS_MANIFESTO: &str = r#"==============================================================================
@@ -73,8 +72,9 @@ fn get_hackers_manifesto() -> &'static str {
 
 #[pyfunction]
 fn open_manifesto_in_browser() -> PyResult<()> {
-    open::that("https://phrack.org/issues/7/3")
-        .map_err(|e| PyRuntimeError::new_err(format!("Could not open browser: {e}")))?;
+    // In headless runtimes (e.g. Databricks), there may be no GUI browser available.
+    // Best effort: ignore launcher errors so callers can continue without failing.
+    let _ = open::that("https://phrack.org/issues/7/3");
     Ok(())
 }
 
