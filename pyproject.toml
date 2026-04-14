@@ -22,5 +22,5 @@ classifiers = [
 dynamic = ["version"]
 
 [project.urls]
-Homepage = "https://github.com/portepau/hackers_manifesto"
-Repository = "https://github.com/portepau/hackers_manifesto"
+Homepage = "https://github.com/portepau/"
+Repository = "https://github.com/portepau/"
