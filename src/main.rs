@@ -85,7 +85,7 @@ fn get_hackers_manifesto() -> &'static str {
 }
 
 #[pyfunction]
-fn get_hackers_manifesto_hackers_movie_variant() -> &'static str {
+fn get_hackers_manifesto_movie() -> &'static str {
     HACKERS_MOVIE_VARIANT
 }
 
@@ -100,7 +100,7 @@ fn open_manifesto_in_browser() -> PyResult<()> {
 #[pymodule]
 fn hackers_manifesto(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(get_hackers_manifesto, m)?)?;
-    m.add_function(wrap_pyfunction!(get_hackers_manifesto_hackers_movie_variant, m)?)?;
+    m.add_function(wrap_pyfunction!(get_hackers_manifesto_movie, m)?)?;
     m.add_function(wrap_pyfunction!(open_manifesto_in_browser, m)?)?;
     Ok(())
 }
