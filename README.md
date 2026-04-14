@@ -3,19 +3,30 @@
 A Python library written in Rust (PyO3) with two main features:
 
 - Return the full Hacker's Manifesto text.
+- Return the Hackers (1995) movie variant excerpt in English.
 - Open the original manifesto in the browser: https://phrack.org/issues/7/3
 
 ## Exposed Functions
 
 - `get_hackers_manifesto()`
+- `get_hackers_manifesto_hackers_movie_variant()`
 - `open_manifesto_in_browser()`
 
 ## Usage in Python
 
 ```python
 import hackers_manifesto as hm
+```
 
+```python
 print(hm.get_hackers_manifesto())
+```
+
+```python
+print(hm.get_hackers_manifesto_hackers_movie_variant())
+```
+
+```python
 hm.open_manifesto_in_browser()
 ```
 
